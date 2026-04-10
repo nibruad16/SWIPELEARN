@@ -2,14 +2,30 @@
 
 > Transform blog posts into TikTok-style swipeable Knowledge Cards. A mobile-first learning app for busy professionals.
 
-## 🏗️ Architecture
+## 🏗️ Monorepo Architecture
 
 ```
 SwipeLearn/
-├── backend/          # FastAPI (Python) - API server
-├── frontend/         # Flutter - Mobile app
-├── docs/             # Documentation & DB schema
-└── docker-compose.yml
+├── packages/
+│   ├── core/             # Shared Pydantic models & schemas
+│   ├── services/         # Business logic components
+│   ├── api/              # FastAPI server (thin orchestration)
+│   └── mobile/           # Flutter mobile app
+├── docs/                 # Documentation & DB schema
+├── docker-compose.yml    # Container orchestration
+└── Makefile              # Dev task runner
+```
+
+### Package Dependency Graph
+
+```
+  ┌──────────┐
+  │  mobile  │  (Flutter — standalone)
+  └──────────┘
+
+  ┌──────────┐     ┌────────────┐     ┌──────────┐
+  │   api    │ ──▶ │  services  │ ──▶ │   core   │
+  └──────────┘     └────────────┘     └──────────┘
 ```
 
 ## 🚀 Quick Start
@@ -27,31 +43,55 @@ SwipeLearn/
 3. Enable Google Auth in Authentication > Providers
 4. Copy your project URL, anon key, and service key
 
-### 2. Backend Setup
+### 2. Install All Packages
 ```bash
-cd backend
+make install
+```
+
+### 3. Backend Setup
+```bash
+cd packages/api
 cp .env.example .env
 # Edit .env with your keys
 
-pip install -r requirements.txt
-uvicorn app.main:app --reload
+make dev-api
 ```
 
 API docs available at: `http://localhost:8000/docs`
 
-### 3. Docker Setup (Alternative)
+### 4. Docker Setup (Alternative)
 ```bash
-docker-compose up
+make docker-up
 ```
 
-### 4. Frontend Setup
+### 5. Mobile Setup
 ```bash
-cd frontend
-flutter pub get
-flutter run
+make dev-mobile
 ```
 
-## 📡 API Endpoints
+## 📦 Packages
+
+### `packages/core` — Shared Models
+Pydantic schemas used across all backend packages.
+
+```python
+from swipelearn_core.models.card import KnowledgeCard
+from swipelearn_core.models.teacher import Teacher
+```
+
+### `packages/services` — Business Logic
+Independent service components with clean design patterns.
+
+| Component | Pattern | Responsibility |
+|-----------|---------|----------------|
+| ContentScraper | Adapter | Fetch & extract blog content |
+| SummarizerAI | Strategy | AI-powered summarization |
+| TeacherTracker | Observer | Monitor blogs for new posts |
+| FeedService | Service | Feed generation & card management |
+| ContentPipeline | Orchestrator | URL → Knowledge Card pipeline |
+
+### `packages/api` — FastAPI Server
+Thin REST API layer that wires together services.
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -68,16 +108,8 @@ flutter run
 | POST | `/teachers` | Follow a teacher |
 | DELETE | `/teachers/{id}` | Unfollow teacher |
 
-## 🧩 Component Architecture
-
-| Component | Pattern | Responsibility |
-|-----------|---------|----------------|
-| ContentScraper | Adapter | Fetch & extract blog content |
-| SummarizerAI | Strategy | AI-powered summarization |
-| TeacherTracker | Observer | Monitor blogs for new posts |
-| KnowledgeCardUI | Composite | Card display widget |
-| SwipeFeed | Iterator | Vertical swipe feed |
-| FeedService | Service | Feed generation & card management |
+### `packages/mobile` — Flutter App
+Mobile-first UI with swipeable card feed.
 
 ## 🛠️ Tech Stack
 - **Frontend**: Flutter

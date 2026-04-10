@@ -4,16 +4,18 @@ services:
   # FastAPI Backend
   backend:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/api/Dockerfile
     ports:
       - "8000:8000"
     env_file:
-      - ./backend/.env
+      - ./packages/api/.env
     depends_on:
       - redis
     volumes:
-      - ./backend:/app
+      - ./packages/api:/app
+      - ./packages/core:/packages/core
+      - ./packages/services:/packages/services
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
   # Redis for background jobs
@@ -27,14 +29,16 @@ services:
   # Background Worker (Teacher monitoring)
   worker:
     build:
-      context: ./backend
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/api/Dockerfile
     env_file:
-      - ./backend/.env
+      - ./packages/api/.env
     depends_on:
       - redis
     volumes:
-      - ./backend:/app
+      - ./packages/api:/app
+      - ./packages/core:/packages/core
+      - ./packages/services:/packages/services
     command: arq app.workers.monitor_worker.WorkerSettings
 
 volumes:

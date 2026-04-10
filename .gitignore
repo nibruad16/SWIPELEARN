@@ -26,29 +26,29 @@ build/
 .DS_Store
 Thumbs.db
 
-# Flutter
-frontend/.dart_tool/
-frontend/.packages
-frontend/build/
-frontend/.flutter-plugins
-frontend/.flutter-plugins-dependencies
-frontend/.metadata
-frontend/android/.gradle/
-frontend/android/local.properties
-frontend/android/key.properties
-frontend/android/**/*.jks
-frontend/ios/Pods/
-frontend/ios/.symlinks/
-frontend/ios/Flutter/Generated.xcconfig
-frontend/ios/Flutter/flutter_export_environment.sh
-frontend/windows/flutter/generated_plugin_registrant.cc
-frontend/windows/flutter/generated_plugin_registrant.h
-frontend/windows/flutter/generated_plugins.cmake
-frontend/linux/flutter/generated_plugin_registrant.cc
-frontend/linux/flutter/generated_plugin_registrant.h
-frontend/linux/flutter/generated_plugins.cmake
-frontend/macos/Flutter/GeneratedPluginRegistrant.swift
-frontend/assets/fonts/
+# Flutter (packages/mobile)
+packages/mobile/.dart_tool/
+packages/mobile/.packages
+packages/mobile/build/
+packages/mobile/.flutter-plugins
+packages/mobile/.flutter-plugins-dependencies
+packages/mobile/.metadata
+packages/mobile/android/.gradle/
+packages/mobile/android/local.properties
+packages/mobile/android/key.properties
+packages/mobile/android/**/*.jks
+packages/mobile/ios/Pods/
+packages/mobile/ios/.symlinks/
+packages/mobile/ios/Flutter/Generated.xcconfig
+packages/mobile/ios/Flutter/flutter_export_environment.sh
+packages/mobile/windows/flutter/generated_plugin_registrant.cc
+packages/mobile/windows/flutter/generated_plugin_registrant.h
+packages/mobile/windows/flutter/generated_plugins.cmake
+packages/mobile/linux/flutter/generated_plugin_registrant.cc
+packages/mobile/linux/flutter/generated_plugin_registrant.h
+packages/mobile/linux/flutter/generated_plugins.cmake
+packages/mobile/macos/Flutter/GeneratedPluginRegistrant.swift
+packages/mobile/assets/fonts/
 
 # Docker
 .docker/
