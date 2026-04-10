@@ -12,7 +12,7 @@ Dependencies: OpenAI API (GPT-4o-mini)
 
 from abc import ABC, abstractmethod
 from openai import AsyncOpenAI
-from app.models.card import KnowledgeCardBase
+from swipelearn_core.models.card import KnowledgeCardBase
 from app.config import get_settings
 import json
 import logging

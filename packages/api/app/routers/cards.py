@@ -5,10 +5,10 @@ Handles Knowledge Card creation (URL summarization) and retrieval.
 """
 
 from fastapi import APIRouter, HTTPException, Depends
-from app.models.card import SummarizeRequest, SummarizeResponse, KnowledgeCard
-from app.services.scraper import ContentScraper
-from app.services.summarizer import SummarizerAI
-from app.services.feed_service import FeedService
+from swipelearn_core.models.card import SummarizeRequest, SummarizeResponse, KnowledgeCard
+from swipelearn_services.scraper import ContentScraper
+from swipelearn_services.summarizer import SummarizerAI
+from swipelearn_services.feed_service import FeedService
 from app.routers.auth import get_current_user
 from app.database import get_supabase_client
 import logging

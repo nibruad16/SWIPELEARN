@@ -5,7 +5,7 @@ Handles feed generation and card management logic.
 """
 
 from app.database import get_supabase_client
-from app.models.card import KnowledgeCard, KnowledgeCardSummary
+from swipelearn_core.models.card import KnowledgeCard, KnowledgeCardSummary
 from uuid import UUID
 from typing import Optional
 import logging

@@ -9,10 +9,10 @@ Usage:
     result = await pipeline.process_url("https://blog.example.com/article")
 """
 
-from app.services.scraper import ContentScraper, ScrapedContent
-from app.services.summarizer import SummarizerAI, MockSummarizer
-from app.services.feed_service import FeedService
-from app.models.card import KnowledgeCardBase
+from swipelearn_services.scraper import ContentScraper, ScrapedContent
+from swipelearn_services.summarizer import SummarizerAI, MockSummarizer
+from swipelearn_services.feed_service import FeedService
+from swipelearn_core.models.card import KnowledgeCardBase
 from typing import Optional
 import logging
 

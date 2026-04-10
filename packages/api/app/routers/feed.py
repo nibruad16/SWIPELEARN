@@ -5,7 +5,7 @@ Handles the Knowledge Card feed and saved cards list.
 """
 
 from fastapi import APIRouter, Depends, Query
-from app.services.feed_service import FeedService
+from swipelearn_services.feed_service import FeedService
 from app.routers.auth import get_current_user
 import logging
 

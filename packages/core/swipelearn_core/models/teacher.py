@@ -45,6 +45,6 @@ class UserTeacher(BaseModel):
 
 
 # Avoid circular import
-from app.models.card import KnowledgeCardSummary  # noqa: E402
+from swipelearn_core.models.card import KnowledgeCardSummary  # noqa: E402
 
 TeacherWithCards.model_rebuild()

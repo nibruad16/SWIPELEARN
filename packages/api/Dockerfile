@@ -9,6 +9,11 @@ RUN apt-get update && apt-get install -y \
     libxslt-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Install local packages first
+COPY ../core /packages/core
+COPY ../services /packages/services
+RUN pip install --no-cache-dir -e /packages/core -e /packages/services
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 

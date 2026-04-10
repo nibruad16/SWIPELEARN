@@ -9,10 +9,10 @@ Runs on a cron schedule to check all teachers with RSS feeds.
 
 from arq import cron
 from app.database import get_supabase_client
-from app.services.teacher_tracker import TeacherTracker
-from app.services.scraper import ContentScraper
-from app.services.summarizer import SummarizerAI
-from app.services.feed_service import FeedService
+from swipelearn_services.teacher_tracker import TeacherTracker
+from swipelearn_services.scraper import ContentScraper
+from swipelearn_services.summarizer import SummarizerAI
+from swipelearn_services.feed_service import FeedService
 import logging
 
 logger = logging.getLogger(__name__)

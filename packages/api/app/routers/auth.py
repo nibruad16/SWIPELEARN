@@ -6,7 +6,7 @@ Delegates to Supabase Auth.
 """
 
 from fastapi import APIRouter, HTTPException, Depends, Request
-from app.models.user import UserSignup, UserLogin, AuthResponse, UserProfile
+from swipelearn_core.models.user import UserSignup, UserLogin, AuthResponse, UserProfile
 from app.database import get_supabase_auth_client, get_supabase_client
 import logging
 

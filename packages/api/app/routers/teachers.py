@@ -5,8 +5,8 @@ Handles teacher (creator) management: follow, unfollow, list, view cards.
 """
 
 from fastapi import APIRouter, HTTPException, Depends, Query
-from app.models.teacher import TeacherCreate, Teacher
-from app.services.teacher_tracker import TeacherTracker
+from swipelearn_core.models.teacher import TeacherCreate, Teacher
+from swipelearn_services.teacher_tracker import TeacherTracker
 from app.routers.auth import get_current_user
 from app.database import get_supabase_client
 import logging

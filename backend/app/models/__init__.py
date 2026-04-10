@@ -1,1 +1,0 @@
-# SwipeLearn Models

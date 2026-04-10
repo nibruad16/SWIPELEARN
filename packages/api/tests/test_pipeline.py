@@ -4,8 +4,8 @@ Run with: pytest tests/ -v
 """
 
 import pytest
-from app.services.url_validator import URLValidator
-from app.services.summarizer import MockSummarizer, SummarizerAI
+from swipelearn_services.url_validator import URLValidator
+from swipelearn_services.summarizer import MockSummarizer, SummarizerAI
 
 
 # ===========================
