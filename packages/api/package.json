@@ -1,0 +1,11 @@
+{
+  "name": "@swipelearn/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"No build required for FastAPI app\"",
+    "dev": "uvicorn app.main:app --reload",
+    "test": "pytest tests/ -v",
+    "lint": "echo \"API lint placeholder\""
+  }
+}

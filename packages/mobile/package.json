@@ -1,0 +1,11 @@
+{
+  "name": "@swipelearn/mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "flutter build apk",
+    "dev": "flutter run",
+    "test": "flutter test",
+    "lint": "flutter analyze"
+  }
+}

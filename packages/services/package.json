@@ -1,0 +1,11 @@
+{
+  "name": "@swipelearn/services",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"No build required for python services package\"",
+    "dev": "echo \"No dev required for python services package\"",
+    "test": "echo \"Services tests placeholder\"",
+    "lint": "echo \"Services lint placeholder\""
+  }
+}

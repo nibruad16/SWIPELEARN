@@ -1,0 +1,11 @@
+{
+  "name": "@swipelearn/core",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"No build required for python core package\"",
+    "dev": "echo \"No dev required for python core package\"",
+    "test": "echo \"Core tests placeholder\"",
+    "lint": "echo \"Core lint placeholder\""
+  }
+}
