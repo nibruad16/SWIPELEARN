@@ -5,7 +5,7 @@
   "scripts": {
     "build": "echo \"No build required for python core package\"",
     "dev": "echo \"No dev required for python core package\"",
-    "test": "echo \"Core tests placeholder\"",
+    "test": "cd ../.. && python -m pytest packages/core/tests/ -v --tb=short",
     "lint": "echo \"Core lint placeholder\""
   }
 }
