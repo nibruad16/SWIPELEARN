@@ -1,11 +1,13 @@
 {
   "name": "@swipelearn/api",
-  "version": "1.0.0",
-  "private": true,
+  "version": "0.0.0",
+  "main": "./src/server.py",
   "scripts": {
-    "build": "echo \"No build required for FastAPI app\"",
-    "dev": "uvicorn app.main:app --reload",
-    "test": "pytest tests/ -v",
-    "lint": "echo \"API lint placeholder\""
-  }
+    "dev": "uvicorn src.server:app --reload --port 8000",
+    "build": "echo \"Python — no build step required\"",
+    "test": "python -m pytest src/tests/ -v --tb=short",
+    "lint": "ruff check src/"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

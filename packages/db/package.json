@@ -1,0 +1,20 @@
+{
+  "name": "@swipelearn/db",
+  "version": "0.0.0",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "db:push": "echo \"Run: supabase db push\"",
+    "db:generate": "echo \"Run: supabase gen types typescript\"",
+    "build": "tsc --noEmit",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.39.0",
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.0",
+    "typescript": "^5"
+  }
+}

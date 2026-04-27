@@ -4,9 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-.venv/
 *.egg-info/
 dist/
 build/
@@ -15,6 +12,7 @@ build/
 .env
 .env.local
 .env.production
+.env*.local
 
 # IDE
 .vscode/
@@ -26,29 +24,33 @@ build/
 .DS_Store
 Thumbs.db
 
-# Flutter (packages/mobile)
-packages/mobile/.dart_tool/
-packages/mobile/.packages
-packages/mobile/build/
-packages/mobile/.flutter-plugins
-packages/mobile/.flutter-plugins-dependencies
-packages/mobile/.metadata
-packages/mobile/android/.gradle/
-packages/mobile/android/local.properties
-packages/mobile/android/key.properties
-packages/mobile/android/**/*.jks
-packages/mobile/ios/Pods/
-packages/mobile/ios/.symlinks/
-packages/mobile/ios/Flutter/Generated.xcconfig
-packages/mobile/ios/Flutter/flutter_export_environment.sh
-packages/mobile/windows/flutter/generated_plugin_registrant.cc
-packages/mobile/windows/flutter/generated_plugin_registrant.h
-packages/mobile/windows/flutter/generated_plugins.cmake
-packages/mobile/linux/flutter/generated_plugin_registrant.cc
-packages/mobile/linux/flutter/generated_plugin_registrant.h
-packages/mobile/linux/flutter/generated_plugins.cmake
-packages/mobile/macos/Flutter/GeneratedPluginRegistrant.swift
-packages/mobile/assets/fonts/
+# Node / pnpm
+node_modules/
+pnpm-lock.yaml
+.pnpm-store/
+
+# Next.js
+apps/web/.next/
+apps/web/out/
+
+# Flutter / Dart
+apps/mobile/.dart_tool/
+apps/mobile/build/
+apps/mobile/.flutter-plugins
+apps/mobile/.flutter-plugins-dependencies
+apps/mobile/.metadata
+apps/mobile/android/.gradle/
+apps/mobile/android/local.properties
+apps/mobile/android/key.properties
+apps/mobile/android/**/*.jks
+apps/mobile/ios/Pods/
+apps/mobile/ios/.symlinks/
+apps/mobile/ios/Flutter/Generated.xcconfig
+apps/mobile/ios/Flutter/flutter_export_environment.sh
+apps/mobile/pubspec.lock
+
+# Turborepo
+.turbo/
 
 # Docker
 .docker/
@@ -56,6 +58,10 @@ packages/mobile/assets/fonts/
 # Redis
 dump.rdb
 
-# Turborepo and NPM
-node_modules/
-.turbo/
+# DB
+*.db
+*.sqlite
+
+# Logs
+*.log
+npm-debug.log*

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d0d1a;
+  --foreground: #f0f0ff;
+  --primary: #6c63ff;
+  --secondary: #00d9ff;
+  --accent: #ff6b9d;
+  --surface: #1a1a2e;
+  --surface-light: #252542;
+  --border: #2d2d4a;
+  --text-secondary: #b0b0cc;
+  --text-muted: #6b6b8a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
