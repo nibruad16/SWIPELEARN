@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:swipelearn/core/theme/app_theme.dart';
+import 'package:swipelearn/core/services/api_service.dart';
+import 'package:swipelearn/core/providers/progress_provider.dart';
 import 'package:swipelearn/screens/auth/auth_screen.dart';
 import 'package:swipelearn/screens/feed/swipe_feed_screen.dart';
 import 'package:swipelearn/screens/add_url/add_url_screen.dart';
 import 'package:swipelearn/screens/teachers/teachers_screen.dart';
 import 'package:swipelearn/screens/saved/saved_screen.dart';
+import 'package:swipelearn/screens/profile/profile_screen.dart';
 import 'package:swipelearn/widgets/bottom_nav.dart';
 
 /// SwipeLearn — Mobile-first learning app.
@@ -45,7 +48,7 @@ class SwipeLearnApp extends StatelessWidget {
 }
 
 /// MainShell — Root screen with bottom navigation.
-/// Manages the 4 main tabs: Feed, Teachers, Add URL, Saved.
+/// Manages the 5 main tabs: Feed, Teachers, Add URL, Saved, Profile.
 
 class MainShell extends StatefulWidget {
   const MainShell({super.key});
@@ -58,17 +61,23 @@ class _MainShellState extends State<MainShell> {
   int _currentIndex = 0;
   bool _isAuthenticated = true; // Set to false to show auth screen
 
+  // Progress provider shared across tabs
+  late final ProgressProvider _progressProvider;
+
   // Cache screens to preserve state
   late final List<Widget> _screens;
 
   @override
   void initState() {
     super.initState();
+    final api = ApiService();
+    _progressProvider = ProgressProvider(api);
     _screens = [
       const SwipeFeedScreen(),
       const TeachersScreen(),
       const AddUrlScreen(),
       const SavedScreen(),
+      ProfileScreen(progressProvider: _progressProvider),
     ];
   }
 

@@ -9,7 +9,7 @@ Run with: uvicorn app.main:app --reload
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
-from app.routers import auth, cards, feed, teachers
+from app.routers import auth, cards, feed, teachers, progress
 import logging
 
 # Configure logging
@@ -50,6 +50,7 @@ def create_app() -> FastAPI:
     app.include_router(cards.router)
     app.include_router(feed.router)
     app.include_router(teachers.router)
+    app.include_router(progress.router)
 
     @app.get("/", tags=["Health"])
     async def root():

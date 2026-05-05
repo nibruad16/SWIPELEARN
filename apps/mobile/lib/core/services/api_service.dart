@@ -247,6 +247,26 @@ class ApiService {
         .toList();
     return cards;
   }
+
+  // ─────────────────────────────────────────────
+  //  Progress & Gamification Endpoints
+  // ─────────────────────────────────────────────
+
+  Future<Map<String, dynamic>> getProgress() async {
+    return _get('/progress/me');
+  }
+
+  Future<Map<String, dynamic>> recordSwipe({String? cardId}) async {
+    return _post('/progress/swipe', body: cardId != null ? {'card_id': cardId} : {});
+  }
+
+  Future<Map<String, dynamic>> recordSave() async {
+    return _post('/progress/save');
+  }
+
+  Future<Map<String, dynamic>> getLeaderboard({int limit = 10}) async {
+    return _get('/progress/leaderboard?limit=$limit');
+  }
 }
 
 // ─────────────────────────────────────────────

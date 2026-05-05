@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:swipelearn/core/theme/app_theme.dart';
 
 /// BottomNav — Custom bottom navigation bar with glow effect.
-/// 4 tabs: Feed, Teachers, Add URL, Saved
+/// 5 tabs: Feed, Teachers, Add URL, Saved, Profile
 
 class BottomNav extends StatelessWidget {
   final int currentIndex;
@@ -60,6 +60,13 @@ class BottomNav extends StatelessWidget {
                 label: 'Saved',
                 isActive: currentIndex == 3,
                 onTap: () => onTap(3),
+              ),
+              _NavItem(
+                icon: Icons.person_outline_rounded,
+                activeIcon: Icons.person_rounded,
+                label: 'Profile',
+                isActive: currentIndex == 4,
+                onTap: () => onTap(4),
               ),
             ],
           ),
